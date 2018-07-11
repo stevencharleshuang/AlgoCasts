@@ -20,16 +20,35 @@
 //   }
 // }
 
+/* My Solution */
+// function palindrome(str) {
+//   let revStr = '';
+//   for (let char of str) {
+//     revStr = char + revStr;
+//   }
+//   if (str === revStr) {
+//     return true;
+//   } else {
+//   return false;
+//   }
+// }
+
+/* Solution 1 */
+// function palindrome(str) {
+//   const reversed = str
+//   .split('')
+//   .reverse()
+//   .join('');
+//
+//   return str === reversed;
+// }
+
+/* Solution 2 (not an ideal solution) */
 function palindrome(str) {
-  let revStr = '';
-  for (let char of str) {
-    revStr = char + revStr;
-  }
-  if (str === revStr) {
-    return true;
-  } else {
-  return false;
-  }
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1];
+  });
 }
+
 
 module.exports = palindrome;
