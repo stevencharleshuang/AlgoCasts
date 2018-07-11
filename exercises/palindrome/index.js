@@ -7,6 +7,29 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+/* Solution Works But Fails Tests (toLowerCase()) */
+// function palindrome(str) {
+//   let revStr = '';
+//   for (let char of str) {
+//     revStr = char.toLowerCase() + revStr;
+//   }
+//   if (str.toLowerCase() === revStr) {
+//     return true;
+//   } else {
+//   return false;
+//   }
+// }
+
+function palindrome(str) {
+  let revStr = '';
+  for (let char of str) {
+    revStr = char + revStr;
+  }
+  if (str === revStr) {
+    return true;
+  } else {
+  return false;
+  }
+}
 
 module.exports = palindrome;
